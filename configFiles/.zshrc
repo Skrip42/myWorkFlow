@@ -8,8 +8,7 @@ export ZSH="/home/skrip/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="af-magic"
-
+ZSH_THEME="af-magic" 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -72,25 +71,35 @@ plugins=(
     git
     npm
     composer
-    sudo
     vi-mode
+    sudo
+    urltools
+    docker
+    docker-compose
+    branch
+    extract
 )
 
 source $ZSH/oh-my-zsh.sh
 
+#start tmux if ssh
  if [[ -n $SSH_CONNECTION ]]; then
-   #export EDITOR='vim'
  else
-   #export EDITOR='mvim'
     if ["$TMUX" = ""]; then tmux; fi
  fi
+
+
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+ export LANG=en_US.UTF-8
+#fix vim+tmux color
+ export TERM='xterm-256color'
+#set vim default editor
+ export EDITOR='vim'
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
