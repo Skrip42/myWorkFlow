@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "----installing"
-#detected packageManager
 if [ -x "$(command -v zypper)" ]; then
     echo 'zypper package-manager detected'
     declare packageManager="zypper"
@@ -9,14 +8,14 @@ elif [ -x "$(command -v apt-get)" ]; then
     declare packageManager="apt-get"
 fi
 
-#move to home directory
 cd ..
+echo "----unitilts installing"
+${packageManager} install fzf
+${packageManager} install the_silver_searcher
 
-#install tmux
 echo "----tmux installing"
 ${packageManager} install tmux
 
-#install zsh
 echo "----zsh installing"
 ${packageManager} install zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"

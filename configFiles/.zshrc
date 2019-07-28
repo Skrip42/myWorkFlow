@@ -73,7 +73,7 @@ plugins=(
     composer
     vi-mode
     sudo
-    urltools
+    #urltools
     docker
     docker-compose
     branch
@@ -83,8 +83,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 #start tmux if ssh
- if [[ -n $SSH_CONNECTION ]]; then
- else
+ if ![[ -n $SSH_CONNECTION ]]; then
     if ["$TMUX" = ""]; then tmux; fi
  fi
 
