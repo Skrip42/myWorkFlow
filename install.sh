@@ -46,14 +46,14 @@ else
 fi
 cd bundle/YouCompleteMe
 python3 install.py --clangd-completer
-
 echo "---- copy config file"
-ln ../.vim/.vimrc ../.vimrc
-ln ./configFiles/.zshrc ../.zshrc
-ln ./configFiles/.bashrc ../.bashrc
-ln ./configFiles/.tmux.conf ../.tmux.conf
+cd ../../../myWorkFlow
 mv ../.zshrc ./backups/.zshrc
 mv ../.vimrc ./backups/.vimrc
 mv ../.bashrc ./backups/.bashrc
 mv ../.tmux.conf ./backups/.tmux.conf
+ln ../.vim/.vimrc ../.vimrc
+ln ./configFiles/.zshrc ../.zshrc
+ln ./configFiles/.bashrc ../.bashrc
+ln ./configFiles/.tmux.conf ../.tmux.conf
 echo "---- finishing install please reboot"
