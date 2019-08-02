@@ -30,25 +30,25 @@ cd ..
 # your real name
 ./configure \
 --enable-multibyte \
---enable-perlinterp=dynamic \
---enable-rubyinterp=dynamic \
---with-ruby-command=/usr/bin/ruby \
---enable-pythoninterp=dynamic \
---with-python-config-dir=/usr/bin/python \ # or path to python3
+--enable-perlinterp=yes \
+--enable-rubyinterp=yes \
+--enable-pythoninterp=yes \
 --enable-python3interp \
+--enable-cscope \
+--enable-gui=auto \
+--enable-fontset \
+--enable-largefile \
+--enable-fail-if-missing
+--disable-netbeans \
+--with-ruby-command=/usr/bin/ruby \
+#--with-python-config-dir=/usr/bin/python \ # or path to python3
 --with-python3-config-dir=/usr/bin/python3 \ # or path to python3
 --enable-luainterp \
 --with-luajit \
---enable-cscope \
---enable-gui=auto \
 --with-features=huge \
 --with-client-server \
 --with-x \
---enable-fontset \
---enable-largefile \
---disable-netbeans \
 --with-compiledby="ERICK ROCHA <contato@erickpatrick.net>" \
---enable-fail-if-missing
 
 # this this is the compilation step. It should also create the symlink of the binary
 # one /usr/bin folder
