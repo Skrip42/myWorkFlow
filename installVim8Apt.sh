@@ -9,7 +9,7 @@ sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 
 # installs everything needed to make/configure/build Vim
-sudo apt-get -y install liblua5.1-dev luajit libluajit-5.1-dev libjuajit-5.1-2 python-dev python3-dev ruby-dev ruby2.3 ruby2.3-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
+sudo apt-get -y install liblua5.1-dev luajit libluajit-5.1-dev libjuajit-5.1-2 python-dev python3-dev ruby-dev ruby2.5 ruby2.5-dev libperl-dev libncurses5-dev libatk1.0-dev libx11-dev libxpm-dev libxt-dev
 
 #Optional: so vim can be uninstalled again via `dpkg -r vim`
 sudo apt-get -y install checkinstall
