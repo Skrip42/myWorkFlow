@@ -8,7 +8,14 @@ elif [ -x "$(command -v apt-get)" ]; then
     declare packageManager="apt-get"
 fi
 
-cd ..
+echo "----buildVim"
+if [packageManager == 'zypper']; then
+    source compileVimOpenSuse.sh
+elif
+    source compileVimUbuntu.sh
+fi
+
+cd ~
 echo "----unitilts installing"
 ${packageManager} install fzf
 ${packageManager} install the_silver_searcher
@@ -29,7 +36,7 @@ mkdir .vimundo -m +wrx
 
 echo "---- ---- get vim plugins"
 git clone https://github.com/Skrip42/myVimSettings.git .vim
-cd .vim 
+cd ~/.vim 
 git submodule init
 git submodule update --init --recursive
 
@@ -44,10 +51,11 @@ else
     ${packageManager} install python3-dev
     ${packageManager} install build-dssential
 fi
-cd bundle/YouCompleteMe
+cd ~/.vim/bundle/YouCompleteMe
+
 python3 install.py --clangd-completer
 echo "---- copy config file"
-cd ../../../myWorkFlow
+cd ~/myWorkFlow
 mv ../.zshrc ./backups/.zshrc
 mv ../.vimrc ./backups/.vimrc
 mv ../.bashrc ./backups/.bashrc
