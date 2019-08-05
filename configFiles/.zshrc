@@ -73,7 +73,7 @@ plugins=(
     composer
     vi-mode
     sudo
-    #urltools
+    urltools
     docker
     docker-compose
     branch
@@ -81,9 +81,11 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source ~/myWorkFlow/zshskript/svim.zsh
 
 #start tmux if ssh
- if ![[ -n $SSH_CONNECTION ]]; then
+ if [[ -n $SSH_CONNECTION ]]; then
+ else
     if ["$TMUX" = ""]; then tmux; fi
  fi
 
@@ -99,13 +101,6 @@ source $ZSH/oh-my-zsh.sh
  export TERM='xterm-256color'
 #set vim default editor
  export EDITOR='vim'
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

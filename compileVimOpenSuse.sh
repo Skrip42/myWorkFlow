@@ -4,10 +4,6 @@ sudo zypper rm vim vim-runtime vim-gnome vim-tiny vim-gui-common
 # removes current link for vim
 sudo rm -rf /usr/local/share/vim /usr/bin/vim
 
-# add ppa for newest version of ruby (currently, as of 06/06/2017, ruby v2.4)
-#sudo apt-add-repository ppa:brightbox/ruby-ng
-#sudo apt-get update
-
 # installs everything needed to make/configure/build Vim
 sudo zypper in \
     lua51-luajit \
@@ -60,10 +56,9 @@ cd ..
 --enable-fontset \
 --enable-largefile \
 --disable-netbeans \
---with-compiledby="ERICK ROCHA <contato@erickpatrick.net>" \
+--with-compiledby="skrip <skrip42@gmail.com>" \
 --enable-fail-if-missing
 
 # this this is the compilation step. It should also create the symlink of the binary
 # one /usr/bin folder
 make && sudo make install > viminstal.log
-# To be able to access the new vim instaltion we need to refresh bash/zsh/fish
