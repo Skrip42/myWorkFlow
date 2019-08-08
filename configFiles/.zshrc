@@ -47,4 +47,5 @@ export LANG=en_US.UTF-8
 export TERM='xterm-256color'
 #set vim default editor
 export EDITOR='vim'
-
+#remove ksshaskpass
+unset SSH_ASKPASS
