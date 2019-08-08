@@ -9,6 +9,13 @@ export ZSH="/home/skrip/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic" 
+
+PROMPT='$FG[237]${(l.COLUMNS..-.)}%{$reset_color%}
+$FG[032]%~\
+    $(git_prompt_info)$(branch_prompt_info) \
+$FG[105]%(!.#.»)%{$reset_color%} '
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -20,7 +27,7 @@ ZSH_THEME="af-magic"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+ #HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -60,8 +67,9 @@ ZSH_THEME="af-magic"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
+ #ZSH_CUSTOM=/path/to/new-custom-folder
+ 
+ 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -69,29 +77,33 @@ ZSH_THEME="af-magic"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    branch
     npm
     composer
     vi-mode
     sudo
-    urltools
     docker
     docker-compose
-    branch
     extract
 )
 
+export FZF_CTRL_R_OPTS='--sort --exact'
 source $ZSH/oh-my-zsh.sh
 source ~/myWorkFlow/zshskript/svim.zsh
+source ~/myWorkFlow/zshskript/fzf-completion.zsh
+source ~/myWorkFlow/zshskript/fzf-key-bingings.zsh
 
 #start tmux if ssh
  if [[ -n $SSH_CONNECTION ]]; then
  else
-    if ["$TMUX" = ""]; then tmux; fi
+    if [ "$TMUX" = "" ]; then tmux; fi
  fi
 
 
 
 # User configuration
+#bindkey "^[[5~" history-beginning-search-backward # pg up
+#bindkey "^[[6~" history-beginning-search-forward # pg down
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
