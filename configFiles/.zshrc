@@ -49,3 +49,4 @@ export TERM='xterm-256color'
 export EDITOR='vim'
 #remove ksshaskpass
 unset SSH_ASKPASS
+unset GIT_ASKPASS
