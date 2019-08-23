@@ -20,6 +20,7 @@ plugins=(
     docker
     docker-compose
     extract
+    symfony
 )
 #enable ohMyZsh engin
 source $ZSH/oh-my-zsh.sh
@@ -31,6 +32,8 @@ source ~/myWorkFlow/zshskript/fzf-key-bingings.zsh
 
 #my litle plugin for server vim
 source ~/myWorkFlow/zshskript/svim.zsh
+
+source ~/myWorkFlow/zshskript/symfonyConsole.zsh
 
 #start tmux only for local session
 if [[ ! -n $SSH_CONNECTION ]]; then
@@ -50,3 +53,7 @@ export EDITOR='vim'
 #remove ksshaskpass
 unset SSH_ASKPASS
 unset GIT_ASKPASS
+
+alias sy='./sy'
+alias console='./console'
+alias phptag='ctags --recurse=yes --tag-relative=yes --exclude=.git --exlude=composer.phar --exclude=.vim --langmap=php:.engine.inc.module.theme.install.php --PHP-kinds=+cfi-vj'
