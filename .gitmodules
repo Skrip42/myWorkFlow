@@ -1,0 +1,9 @@
+[submodule "tmuxPlugin/tmux-cpu"]
+	path = tmuxPlugin/tmux-cpu
+	url = https://github.com/tmux-plugins/tmux-cpu
+[submodule "tmuxPlugin/tmux-online-status"]
+	path = tmuxPlugin/tmux-online-status
+	url = https://github.com/tmux-plugins/tmux-online-status
+[submodule "tmuxPlugin/tmux-prefix-highlight"]
+	path = tmuxPlugin/tmux-prefix-highlight
+	url = https://github.com/tmux-plugins/tmux-prefix-highlight.git

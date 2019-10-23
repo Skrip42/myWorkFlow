@@ -56,4 +56,7 @@ unset GIT_ASKPASS
 
 alias sy='./sy'
 alias console='./console'
-alias phptag='ctags --recurse=yes --tag-relative=yes --exclude=.git --exlude=composer.phar --exclude=.vim --langmap=php:.engine.inc.module.theme.install.php --PHP-kinds=+cfi-vj'
+alias yarn='./yarn'
+alias phptag='ctags -R --fields=+aiSnm --exclude=.git --exclude=node_modules'
+alias :q='exit'
+#alias phptag='ctags --recurse=yes --tag-relative=yes --exclude=.git --exclude=composer.phar --exclude=.vim --langmap=php:.engine.inc.module.theme.install.php --PHP-kinds=+cfi-vj'

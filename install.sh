@@ -64,4 +64,16 @@ ln ../.vim/.vimrc ../.vimrc
 ln ./configFiles/.zshrc ../.zshrc
 ln ./configFiles/.bashrc ../.bashrc
 ln ./configFiles/.tmux.conf ../.tmux.conf
+
+echo "---- install app"
+cd ~
+mkdir app
+echo "---- ---- install ctags"
+wget "https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz" -O ctags-5.8_better_php_parser.tar.gz
+ tar xvf ctags-5.8_better_php_parser.tar.gz
+cd ctags
+./configure
+make
+sudo make install
 echo "---- finishing install please reboot"
+
