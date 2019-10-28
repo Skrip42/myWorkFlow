@@ -13,10 +13,8 @@ sudo zypper in \
     python3-devel \
     ruby2.6 \
     ruby2.6-devel \
-    devel_perl \
     ncurses5-devel \
     atk-devel \
-    libX11 \
     xorg-X11-devel \
     libXpm-devel \
     libXt-devel
@@ -38,15 +36,15 @@ cd ..
 
 # update to use the correct python 2.7/3.x config path also change 'YOUR NAME' to
 # your real name
-./configure \
+sudo ./configure \
 --enable-multibyte \
 --enable-perlinterp=dynamic \
 --enable-rubyinterp=dynamic \
 --with-ruby-command=/usr/bin/ruby \
---enable-pythoninterp=dynamic \
---with-python-config-dir=/usr/bin/python \
---enable-python3interp \
---with-python3-config-dir=/usr/bin/python3 \
+--enable-pythoninterp=yes \
+--with-python-command=python \
+--enable-python3interp=yes \
+--with-python-command=python3 \
 --enable-luainterp \
 --with-luajit \
 --enable-cscope \
@@ -61,4 +59,4 @@ cd ..
 
 # this this is the compilation step. It should also create the symlink of the binary
 # one /usr/bin folder
-make && sudo make install > viminstal.log
+sudo make && sudo make install > viminstal.log

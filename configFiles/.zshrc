@@ -32,8 +32,9 @@ source ~/myWorkFlow/zshskript/fzf-key-bingings.zsh
 
 #my litle plugin for server vim
 source ~/myWorkFlow/zshskript/svim.zsh
-
 source ~/myWorkFlow/zshskript/symfonyConsole.zsh
+#comand to set terminal name 'bgTerminal'
+source ~/myWorkFlow/zshskript/bgterminal.zsh
 
 #start tmux only for local session
 if [[ ! -n $SSH_CONNECTION ]]; then
