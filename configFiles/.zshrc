@@ -27,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 #plugin fzf has problem on opensuse.... its fix this
 export FZF_CTRL_R_OPTS='--sort --exact'
+export HIST_IGNORE_ALL_DUPS=1
 source ~/myWorkFlow/zshskript/fzf-completion.zsh
 source ~/myWorkFlow/zshskript/fzf-key-bingings.zsh
 

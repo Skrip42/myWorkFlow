@@ -125,5 +125,5 @@ export TERM="xterm-256color"
 # ryan
 alias tmux="tmux -2"
 
-set editing-mode vi
+set editing-mode vim
 set keymap vi-command
