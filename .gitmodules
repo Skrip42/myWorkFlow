@@ -7,3 +7,9 @@
 [submodule "tmuxPlugin/tmux-prefix-highlight"]
 	path = tmuxPlugin/tmux-prefix-highlight
 	url = https://github.com/tmux-plugins/tmux-prefix-highlight.git
+[submodule "tmuxPlugin/tmux-current-pane-hostname"]
+	path = tmuxPlugin/tmux-current-pane-hostname
+	url = https://github.com/soyuka/tmux-current-pane-hostname
+[submodule "tmuxPlugin/tmux-xkblayout"]
+	path = tmuxPlugin/tmux-xkblayout
+	url = https://github.com/Skrip42/tmux-xkblayout.git
