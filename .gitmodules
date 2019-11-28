@@ -13,3 +13,6 @@
 [submodule "tmuxPlugin/tmux-xkblayout"]
 	path = tmuxPlugin/tmux-xkblayout
 	url = https://github.com/Skrip42/tmux-xkblayout.git
+[submodule "tmuxPlugin/tmux-better-mouse-mode"]
+	path = tmuxPlugin/tmux-better-mouse-mode
+	url = https://github.com/nhdaly/tmux-better-mouse-mode
