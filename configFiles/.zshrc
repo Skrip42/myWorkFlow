@@ -46,6 +46,8 @@ fi
 #bindkey "^[[5~" history-beginning-search-backward # pg up
 #bindkey "^[[6~" history-beginning-search-forward # pg down
 
+zmodload -a zsh/zpty zpty
+
 #languige
 export LANG=en_US.UTF-8
 #term color

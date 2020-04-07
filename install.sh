@@ -16,9 +16,43 @@ elif
 fi
 
 cd ~
+echo "----create base directory"
+mkdir app
+mkdir project
+
 echo "----unitilts installing"
 ${packageManager} install fzf
 ${packageManager} install the_silver_searcher
+${packageManager} install python3
+${packageManager} install node
+${packageManager} install npm
+${packageManager} install wine
+${packageManager} install unzip
+
+echo "---- ---- install ctags"
+cd ~/app
+wget "https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz" -O ctags-5.8_better_php_parser.tar.gz
+ tar xvf ctags-5.8_better_php_parser.tar.gz
+cd ctags
+./configure
+make
+sudo make install
+cd ~
+echo "---- ---- install heidisql"
+cd ~/app
+mkdir heidisql
+wget https://www.heidisql.com/downloads/releases/HeidiSQL_10.3_64_Portable.zip
+unzip HeidiSQL_10.3_64_Portable.zip
+rm -rf HeidiSQL_10.3_64_Portable.zip
+cd ~
+
+echo "----install deoplete support lib and utilites"
+${packageManager} install neovim
+pip3 install --user --upgrade pynvim
+npm install -g tern
+composer --global require phpactor
+composer --global require phpcs
+${packageManager} install clang
 
 echo "----tmux installing"
 ${packageManager} install tmux
@@ -40,18 +74,18 @@ cd ~/.vim
 git submodule init
 git submodule update --init --recursive
 
-echo "---- ---- install youCompleteMe"
-if [packageManager == 'zypper']; then
-    ${packageManager} install cmake
-    ${packageManager} install gcc-c++
-    ${packageManager} install make
-    ${packageManager} install python3-devel
-else 
-    ${packageManager} install cmake3
-    ${packageManager} install python3-dev
-    ${packageManager} install build-dssential
-fi
-cd ~/.vim/bundle/YouCompleteMe
+#echo "---- ---- install youCompleteMe"
+#if [packageManager == 'zypper']; then
+    #${packageManager} install cmake
+    #${packageManager} install gcc-c++
+    #${packageManager} install make
+    #${packageManager} install python3-devel
+#else 
+    #${packageManager} install cmake3
+    #${packageManager} install python3-dev
+    #${packageManager} install build-dssential
+#fi
+#cd ~/.vim/bundle/YouCompleteMe
 
 python3 install.py --clangd-completer
 echo "---- copy config file"
@@ -65,15 +99,8 @@ ln ./configFiles/.zshrc ../.zshrc
 ln ./configFiles/.bashrc ../.bashrc
 ln ./configFiles/.tmux.conf ../.tmux.conf
 
-echo "---- install app"
-cd ~
-mkdir app
-echo "---- ---- install ctags"
-wget "https://github.com/shawncplus/phpcomplete.vim/raw/master/misc/ctags-5.8_better_php_parser.tar.gz" -O ctags-5.8_better_php_parser.tar.gz
- tar xvf ctags-5.8_better_php_parser.tar.gz
-cd ctags
-./configure
-make
-sudo make install
+#echo "---- install app"
+#cd ~
+#mkdir app
 echo "---- finishing install please reboot"
 
