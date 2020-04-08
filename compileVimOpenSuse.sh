@@ -44,7 +44,7 @@ sudo ./configure \
 --enable-pythoninterp=yes \
 --with-python-command=python \
 --enable-python3interp=yes \
---with-python-command=python3 \
+--with-python3-command=python3 \
 --enable-luainterp \
 --with-luajit \
 --enable-cscope \
