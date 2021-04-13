@@ -70,7 +70,7 @@ mkdir .vimundo -m +wrx
 
 echo "---- ---- get vim plugins"
 git clone https://github.com/Skrip42/myVimSettings.git .vim
-cd ~/.vim 
+cd ~/.vim
 git submodule init
 git submodule update --init --recursive
 
@@ -80,7 +80,7 @@ git submodule update --init --recursive
     #${packageManager} install gcc-c++
     #${packageManager} install make
     #${packageManager} install python3-devel
-#else 
+#else
     #${packageManager} install cmake3
     #${packageManager} install python3-dev
     #${packageManager} install build-dssential
@@ -98,6 +98,15 @@ ln ../.vim/.vimrc ../.vimrc
 ln ./configFiles/.zshrc ../.zshrc
 ln ./configFiles/.bashrc ../.bashrc
 ln ./configFiles/.tmux.conf ../.tmux.conf
+
+echo "---- add auto keyboard language swith on screen lock"
+cd ~/myWorkFlow
+mkdir ~/.config/systemd
+mkdir ~/.config/systemd/user/
+cp other/kb-lock-switch /usr/local/bin
+cp other/kb-lock-switch.service ~/.config/system/user/
+systemctl start --user kb-lock-switch
+systemctl enable --user kb-lock-switch
 
 #echo "---- install app"
 #cd ~

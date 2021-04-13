@@ -2,8 +2,8 @@
 export ZSH="/home/skrip/.oh-my-zsh"
 
 #my favorite theme
-ZSH_THEME="af-magic" 
-#fix promt on mercarial 
+ZSH_THEME="af-magic"
+#fix promt on mercarial
 PROMPT='$FG[237]${(l.COLUMNS..-.)}%{$reset_color%}
 $FG[032]%~\
     $(git_prompt_info)$(branch_prompt_info) \
@@ -61,6 +61,7 @@ unset GIT_ASKPASS
 alias sy='./sy'
 alias console='./console'
 alias yarn='./yarn'
+#alias composer='./composer'
 alias phptag='ctags -R --fields=+aiSnm --exclude=.git --exclude=node_modules'
 alias :q='exit'
 #alias phptag='ctags --recurse=yes --tag-relative=yes --exclude=.git --exclude=composer.phar --exclude=.vim --langmap=php:.engine.inc.module.theme.install.php --PHP-kinds=+cfi-vj'
