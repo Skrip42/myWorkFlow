@@ -6,8 +6,8 @@ sudo rm -rf /usr/local/share/vim /usr/bin/vim
 
 # installs everything needed to make/configure/build Vim
 sudo zypper in \
-    lua51-luajit \
-    lua51-luajit-devel \
+    luajit \
+    luajit-devel \
     lua51-devel \
     python-devel \
     python3-devel \
@@ -41,8 +41,6 @@ sudo ./configure \
 --enable-perlinterp=dynamic \
 --enable-rubyinterp=dynamic \
 --with-ruby-command=/usr/bin/ruby \
---enable-pythoninterp=yes \
---with-python-command=python \
 --enable-python3interp=yes \
 --with-python3-command=python3 \
 --enable-luainterp \
